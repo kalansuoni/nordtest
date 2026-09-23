@@ -1,0 +1,14 @@
+git init = initialize git
+git status = status 
+git commit = commit
+git add . = add all 
+git restore . = restore all
+
+
+ls -force = dir
+
+
+:wq = writequit
+:q! = quitforce
+i = inster mode
+esc = exit inster mode 
