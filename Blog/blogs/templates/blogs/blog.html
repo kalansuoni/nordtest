@@ -1,0 +1,54 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+
+<h2>{{ blog }}</h2>
+
+{% if user == blog.owner %}
+
+<p>
+
+    <a class="btn btn-success"
+       href="{% url 'blogs:new_post' blog.id %}">
+        Add New Post
+    </a>
+
+</p>
+
+{% endif %}
+
+{% for post in posts %}
+
+<div class="card mb-3">
+
+    <div class="card-header">
+
+        <strong>
+            {{ post.date_added|date:'M d, Y H:i' }}
+        </strong>
+
+        {% if user == blog.owner %}
+
+            <a href="{% url 'blogs:edit_post' post.id %}">
+                edit post
+            </a>
+
+        {% endif %}
+
+    </div>
+
+    <div class="card-body">
+
+        {{ post.text|linebreaks }}
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<p>No posts yet.</p>
+
+{% endfor %}
+
+{% endblock content %}

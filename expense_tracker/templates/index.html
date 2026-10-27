@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+</head>
+<body>
+
+<h1>Personal Expense Tracker</h1>
+
+<a href="/add">Add Expense</a>
+
+<h2>Total Expenses: ${{ total }}</h2>
+
+<table>
+    <tr>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for expense in expenses %}
+    <tr>
+        <td>{{ expense.category }}</td>
+        <td>${{ expense.amount }}</td>
+
+        <td>
+            <a href="/delete/{{ loop.index0 }}">
+                Delete
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

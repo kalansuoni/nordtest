@@ -1,0 +1,5 @@
+In Python you can create variables and store data.
+In Python you can use loops to repeat actions.
+In Python you can write functions to organize code.
+In Python you can create classes and objects.
+In Python you can work with files and data.
